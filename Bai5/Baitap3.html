@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bài 2</title>
+    <style>
+        h1{
+            text-align: center;
+            font-size: 30px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+    <script language="JavaScript">
+        function giai(form){
+            var x1, x2;
+            var x, y, z, delta;
+            x = parseInt(form.a.value);
+            y = parseInt(form.b.value);
+            z = parseInt(form.c.value);
+            delta = (y*y - 4*x*z)
+            if(delta == 0){
+                alert("Phuong trinh co nghiem kep");
+                x1 = -y/(2*x);
+                x2 = -y/(2*x);
+                form.x.value = eval(x1);
+                form.y.value = eval(x2);
+            }
+            else if(delta < 0){
+                alert("Phuong trinh vo nghiem");
+            }
+            else{
+                alert("Phuong trinh co 2 nghiem phan biet");
+                x1 = (-y - Math.sqrt(delta))/(2*x);
+                x2 = (-y + Math.sqrt(delta))/(2*x);
+                form.x.value = eval(x1);
+                form.y.value = eval(x2);
+            }
+        }
+    </script>
+</head>
+<body>
+    <form method="post">
+        <center>
+            <br>Nhập giá trị a:
+            <input type="text" name="a" value="">
+            <br>Nhập giá trị b:
+            <input type="text" name="b" value="">
+            <br>Nhập giá trị c:
+            <input type="text" name="c" value="">
+            <br>Đáp số:
+            <input type="text" name="x" value="">
+            <input type="text" name="y" value="">
+            <input type="button" value="Giải" onclick="giai(this.form)">
+            <input type="reset" value="Nhập lại" />
+        </center>
+    </form>
+</body>
+
+</html>
